@@ -12,7 +12,7 @@ This plugin adds Smartsupp Live Chat code to your Wordpress.
 
 == Description ==
 
-Česky popis tohoto plugin a návod najdete [zde](http://www.smartsupp.com).
+Česky popis tohoto plugin a návod najdete [zde](http://www.smartsupp.com/cs/help/wordpress).
 
 This plugin adds Smartsupp Live Chat code to your Wordpress.
 
