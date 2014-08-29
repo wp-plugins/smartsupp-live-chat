@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: smartsupp\n"
+"POT-Creation-Date: 2014-08-27 10:47+0100\n"
+"PO-Revision-Date: 2014-08-27 15:19+0100\n"
+"Last-Translator: Tom Wawrosz\n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/class-smartsupp-admin.php:89
+msgid "Smartsupp Live Chat - Settings"
+msgstr "Smartsupp Live Chat - Nastavení"
+
+#: ../admin/class-smartsupp-admin.php:90
+msgid "Smartsupp Live Chat"
+msgstr "Smartsupp Live Chat"
+
+#: ../admin/class-smartsupp-admin.php:121
+msgid "Enable chat"
+msgstr "Povolit chat"
+
+#: ../admin/class-smartsupp-admin.php:134
+msgid "Smartsupp Chat ID"
+msgstr "Smartsupp Chat ID"
+
+#: ../admin/class-smartsupp-admin.php:146
+msgid "Enable variables"
+msgstr "Povolit proměnné"
+
+#: ../admin/class-smartsupp-admin.php:154
+msgid ""
+"By enabling this option you will be able to see selected variables in your "
+"Smartsupp dashboard. More info <a href=\"#\">here</a>."
+msgstr ""
+"Povolením této možnosti budete schopni vidět vybrané proměnné přímo v "
+"Smartsupp dashboardu. Více informací <a href=\"#\">zde</a>."
+
+#: ../admin/class-smartsupp-admin.php:160
+msgid "Wordpress variables"
+msgstr "Wordpress proměnné"
+
+#: ../admin/class-smartsupp-admin.php:167 ../public/class-smartsupp.php:171
+msgid "Name"
+msgstr "Jméno"
+
+#: ../admin/class-smartsupp-admin.php:168
+msgid "Shows user's display name."
+msgstr "Zobrazí uživatelovo jméno."
+
+#: ../admin/class-smartsupp-admin.php:173 ../public/class-smartsupp.php:162
+msgid "Username"
+msgstr "Přihlašovací jméno"
+
+#: ../admin/class-smartsupp-admin.php:174
+msgid "Shows user's username."
+msgstr "Zobrazí přezdvívku uživatele."
+
+#: ../admin/class-smartsupp-admin.php:179 ../public/class-smartsupp.php:168
+msgid "Role"
+msgstr "Role"
+
+#: ../admin/class-smartsupp-admin.php:180
+msgid "Shows user's role."
+msgstr "Zobrazí úroveň uživatele."
+
+#: ../admin/class-smartsupp-admin.php:185
+msgid "E-mail"
+msgstr "E-mail"
+
+#: ../admin/class-smartsupp-admin.php:186
+msgid "Shows user's email."
+msgstr "Zobrazí email uživatele."
+
+#: ../admin/class-smartsupp-admin.php:196
+msgid "Woocommerce variables"
+msgstr "Woocommerce proměnné"
+
+#: ../admin/class-smartsupp-admin.php:203 ../public/class-smartsupp.php:225
+msgid "Spent"
+msgstr "Obrat"
+
+#: ../admin/class-smartsupp-admin.php:204
+msgid "Shows how much money customer has spent."
+msgstr "Zobrazí obrat zákazníka na Vašém eshopu."
+
+#: ../admin/class-smartsupp-admin.php:209 ../public/class-smartsupp.php:246
+msgid "Orders"
+msgstr "Objednávky"
+
+#: ../admin/class-smartsupp-admin.php:210
+msgid "Shows customer's orders amount."
+msgstr "Zobrazí počet objednávek zákazníka."
+
+#: ../admin/class-smartsupp-admin.php:215
+msgid "Location"
+msgstr "Fakturační adresa"
+
+#: ../admin/class-smartsupp-admin.php:216
+msgid "Shows customer's billing locaition."
+msgstr "Zobrazí fakturační adresu zákazníka."
+
+#: ../admin/class-smartsupp-admin.php:228
+msgid "Dashboard Variables"
+msgstr "Dashboard proměnné"
+
+#: ../public/class-smartsupp.php:165
+msgid "Email"
+msgstr "Email"
+
+#: ../public/class-smartsupp.php:199
+msgid "Billing Location"
+msgstr "Fakturační adresa."
