@@ -118,7 +118,7 @@ class Smartsupp_Admin {
 
 		$fields['general-settings'] = array(
 			'active' => array(
-				'title' => __('Enable chat', $this->plugin_slug),
+				'title' => __('Show chat box', $this->plugin_slug),
 				'field_options' => array(
 					'type' => 'checkbox',
 					'list' => array(
@@ -151,7 +151,7 @@ class Smartsupp_Admin {
 							'name' => 'smartsupp[active-vars]',
 							'value' => $smartsupp['active-vars'],
 							'title' => '',
-							'description' => __("By enabling this option you will be able to see selected variables in your Smartsupp dashboard. More info <a href=\"#\">here</a>.", $this->plugin_slug)
+							'description' => __("Display detailed visitor info in Smartsupp dashboard, so you always see it while chatting. To show the info, visitor has to be signed in on your website.", $this->plugin_slug)
 						)
 					)
 				)
@@ -225,7 +225,7 @@ class Smartsupp_Admin {
 		
 		register_setting( 'smartsupp_settings', 'smartsupp' );
 		add_settings_section( 'general-settings', '', NULL, $this->plugin_slug );
-		add_settings_section( 'variables-settings', __( 'Dashboard Variables', $this->plugin_slug ), NULL, $this->plugin_slug );
+		add_settings_section( 'variables-settings', __( 'Visitor identification', $this->plugin_slug ), NULL, $this->plugin_slug );
 
 
 		foreach ($fields as $section => $field) {
