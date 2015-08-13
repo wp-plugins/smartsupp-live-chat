@@ -10,7 +10,7 @@
  * Plugin Name:       Smartsupp Live Chat
  * Plugin URI:        http://www.smartsupp.com
  * Description:       Adds Smartsupp Live Chat code to your Wordpress.
- * Version:           0.2.0
+ * Version:           0.2.1
  * Author:            Tom Wawrosz
  * Author URI:        http://www.smartsupp.com
  * Text Domain:       smartsupp
