@@ -50,6 +50,9 @@ Supported variables:
 
 == Changelog ==
 
+= 0.2.2 =
+* Some language changes
+
 = 0.2.1 =
 * fixed error in rendering
 
