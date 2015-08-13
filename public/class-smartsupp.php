@@ -4,7 +4,7 @@
  *
  * @package   Smartsupp
  * @author    Tom Wawrosz <tom@smartsupp.com>
- * Version:   0.2.0
+ * Version:   0.2.1
  * @copyright 2014 smartsupp.com
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
@@ -20,7 +20,7 @@ class Smartsupp
      * @since   0.1.0
      * @var     string
      */
-    const VERSION = '0.2.0';
+    const VERSION = '0.2.1';
 
     /**
      * Plugin slug
@@ -232,6 +232,6 @@ class Smartsupp
 
         $code->setUserBasicInformation($dashboard_name, $user_email);
 
-        echo $code;
+        $code->render(true);
     }
 }
