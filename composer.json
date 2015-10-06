@@ -1,5 +1,5 @@
 {
   "require": {
-    "smartsupp/chat-code-generator": "0.1.1"
+    "smartsupp/chat-code-generator": "0.1.3"
   }
 }

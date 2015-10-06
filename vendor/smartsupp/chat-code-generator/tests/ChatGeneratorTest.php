@@ -77,7 +77,7 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function test_setBoxPosition()
     {
-        $this->chat->setBoxPosition('left', 'side', 20, 120);
+        $this->chat->setAlign('left', 'side', 20, 120);
 
         $this->assertEquals('left', self::getPrivateField($this->chat, 'align_x'));
         $this->assertEquals('side', self::getPrivateField($this->chat, 'align_y'));
@@ -91,7 +91,7 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
      */
     public function test_setBoxPosition_badParam()
     {
-        $this->chat->setBoxPosition('foo', 'side', 20, 120);
+        $this->chat->setAlign('foo', 'side', 20, 120);
     }
 
     /**
@@ -100,13 +100,13 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
      */
     public function test_setBoxPosition_badParam2()
     {
-        $this->chat->setBoxPosition('left', 'foo', 20, 120);
+        $this->chat->setAlign('left', 'foo', 20, 120);
     }
 
-    public function test_addUserExtraInformation()
+    public function test_setVariable()
     {
-        $this->chat->addUserExtraInformation('userId', 'User ID', 123);
-        $this->chat->addUserExtraInformation('orderedPrice', 'Ordered Price in Eshop', '128 000');
+        $this->chat->setVariable('userId', 'User ID', 123);
+        $this->chat->setVariable('orderedPrice', 'Ordered Price in Eshop', '128 000');
 
         $this->assertEquals(
             array(
@@ -119,7 +119,8 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function test_setUserBasicInformation()
     {
-        $this->chat->setUserBasicInformation('Johny Depp', 'johny@depp.com');
+        $this->chat->setName('Johny Depp');
+        $this->chat->setEmail('johny@depp.com');
 
         $this->assertEquals('Johny Depp', self::getPrivateField($this->chat, 'name'));
         $this->assertEquals('johny@depp.com', self::getPrivateField($this->chat, 'email'));
@@ -180,15 +181,6 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Exception
-     * @expectedExceptionMessage Language us is not allowed value. You can use only one of values: en, fr, es, de, ru, cs, sk, pl, hu, cn, da, nl, it, pt, hi, ro, no.
-     */
-    public function test_setLanguage_badParam()
-    {
-        $this->chat->setLanguage('us');
-    }
-
-    /**
-     * @expectedException \Exception
      * @expectedExceptionMessage At least KEY param must be set!
      */
     public function test_render_keyNotSet()
@@ -204,11 +196,7 @@ class ChatGeneratorTest extends \PHPUnit_Framework_TestCase
         $expected = "<script type=\"text/javascript\">
             var _smartsupp = _smartsupp || {};
             _smartsupp.key = 'XYZ123456';
-_smartsupp.alignX = 'right'; // or 'left'
-_smartsupp.alignY = 'bottom';  // by default 'bottom'
-_smartsupp.offsetX = 10;    // offset from left or right, default 10
-_smartsupp.offsetY = 100;    // offset from top, default 100
-_smartsupp.widget = 'widget'; // by default 'widget'
+
 window.smartsupp||(function(d) {
                 var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
                 s=d.getElementsByTagName('script')[0];c=d.createElement('script');
@@ -235,11 +223,12 @@ window.smartsupp||(function(d) {
         $this->chat->setCookieDomain('.foo.bar');
         $this->chat->disableSendEmailTranscript();
         $this->chat->enableRating('advanced', true);
-        $this->chat->setBoxPosition('left', 'side', 20, 120);
+        $this->chat->setAlign('left', 'side', 20, 120);
         $this->chat->setWidget('button');
-        $this->chat->setUserBasicInformation('Johny Depp', 'johny@depp.com');
-        $this->chat->addUserExtraInformation('orderTotal', 'Total orders', 150);
-        $this->chat->addUserExtraInformation('lastOrder', 'Last ordered', '2015-07-09');
+        $this->chat->setName('Johny Depp');
+        $this->chat->setEmail('johny@depp.com');
+        $this->chat->setVariable('orderTotal', 'Total orders', 150);
+        $this->chat->setVariable('lastOrder', 'Last ordered', '2015-07-09');
         $this->chat->setGoogleAnalytics('UA-123456', array('cookieDomain' => '.foo.bar'));
         $this->chat->hideWidget();
 
@@ -253,9 +242,9 @@ _smartsupp.ratingType = 'advanced'; // by default 'simple'
 _smartsupp.ratingComment = true;  // default false
 _smartsupp.alignX = 'left'; // or 'left'
 _smartsupp.alignY = 'side';  // by default 'bottom'
-_smartsupp.offsetX = 20;    // offset from left or right, default 10
-_smartsupp.offsetY = 120;    // offset from top, default 100
 _smartsupp.widget = 'button'; // by default 'widget'
+_smartsupp.offsetX = 20;    // offset from left / right, default 10
+_smartsupp.offsetY = 120;    // offset from top, default 100
 _smartsupp.gaKey = 'UA\\x2d123456';
 _smartsupp.gaOptions = {'cookieDomain': '\\x2efoo\\x2ebar'};
 _smartsupp.hideWidget = true;

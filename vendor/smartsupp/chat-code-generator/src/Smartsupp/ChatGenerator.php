@@ -16,12 +16,6 @@ namespace Smartsupp;
 class ChatGenerator
 {
     /**
-     * @var array Values which are allowed for language param.
-     */
-    protected $allowed_languages = array('en', 'fr', 'es', 'de', 'ru', 'cs', 'sk', 'pl', 'hu', 'cn', 'da', 'nl', 'it',
-        'pt', 'hi', 'ro', 'no');
-
-    /**
      * @var array Values which are allowed for ratingType param.
      */
     protected $allowed_rating_types = array('advanced', 'simple');
@@ -52,7 +46,7 @@ class ChatGenerator
     protected $cookie_domain = null;
 
     /**
-     * @var string Chat language. Can have any value from $this->allowed_language.
+     * @var string Chat language.
      */
     protected $language = 'en';
 
@@ -100,27 +94,27 @@ class ChatGenerator
     /**
      * @var string Chat X align.
      */
-    protected $align_x = 'right';
+    protected $align_x = null;
 
     /**
      * @var string Chat Y align.
      */
-    protected $align_y = 'bottom';
+    protected $align_y = null;
 
     /**
      * @var int Chat X offset.
      */
-    protected $offset_x = 10;
+    protected $offset_x = null;
 
     /**
      * @var int Chat Y offset.
      */
-    protected $offset_y = 100;
+    protected $offset_y = null;
 
     /**
      * @var string Widget type.
      */
-    protected $widget = 'widget';
+    protected $widget = null;
 
     /**
      * @var null|string Google analytics key value.
@@ -150,11 +144,6 @@ class ChatGenerator
      */
     public function setLanguage($language)
     {
-        if (!in_array($language, $this->allowed_languages)) {
-            throw new \Exception("Language $language is not allowed value. You can use only one of values: " .
-                implode(', ', $this->allowed_languages) . ".");
-        }
-
         $this->language = $language;
     }
 
@@ -225,16 +214,24 @@ class ChatGenerator
     }
 
     /**
-     * You can send basic information about web visitors from your database to Smartsupp (name, email). So your visitors
-     * won't be anonymous and your chat agents will see info about every visitor, enabling agents to better focus on VIP
-     * visitors and provide customized answers.
+     * You can send visitor name. So your visitors won't be anonymous and your chat agents will see info about every
+     * visitor, enabling agents to better focus on VIP visitors and provide customized answers.
      *
-     * @param $name User name.
-     * @param $email User e-mail address.
+     * @param string $name
      */
-    public function setUserBasicInformation($name, $email)
+    public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * You can send visitor email. So your visitors won't be anonymous and your chat agents will see info about every
+     * visitor, enabling agents to better focus on VIP visitors and provide customized answers.
+     *
+     * @param string $name
+     */
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
 
@@ -245,7 +242,7 @@ class ChatGenerator
      * @param $label Parameter label.
      * @param $value Parameter value.
      */
-    public function addUserExtraInformation($id, $label, $value)
+    public function setVariable($id, $label, $value)
     {
         $variable = array('id' => $id, 'label' => $label, 'value' => $value);
 
@@ -262,7 +259,7 @@ class ChatGenerator
      * @param int $offset_y Offset from top.
      * @throws \Exception When params are not correct.
      */
-    public function setBoxPosition($align_x = 'right', $align_y = 'bottom', $offset_x = 10, $offset_y = 100)
+    public function setAlign($align_x = 'right', $align_y = 'bottom', $offset_x = 10, $offset_y = 100)
     {
         if (!in_array($align_x, $this->allowed_align_x)) {
             throw new \Exception("AllignX value $align_x is not allowed value. You can use only one of values: " .
@@ -380,11 +377,16 @@ class ChatGenerator
             $params[] = "_smartsupp.ratingComment = " . ($this->rating_comment? 'true':'false') . ";  // default false";
         }
 
-        $params[] = "_smartsupp.alignX = '" . $this->align_x . "'; // or 'left'";
-        $params[] = "_smartsupp.alignY = '" . $this->align_y . "';  // by default 'bottom'";
-        $params[] = "_smartsupp.offsetX = " . (int) $this->offset_x . ";    // offset from left or right, default 10";
-        $params[] = "_smartsupp.offsetY = " . (int) $this->offset_y . ";    // offset from top, default 100";
-        $params[] = "_smartsupp.widget = '" . $this->widget . "'; // by default 'widget'";
+        if ($this->align_x && $this->align_y && $this->widget) {
+            $params[] = "_smartsupp.alignX = '" . $this->align_x . "'; // or 'left'";
+            $params[] = "_smartsupp.alignY = '" . $this->align_y . "';  // by default 'bottom'";
+            $params[] = "_smartsupp.widget = '" . $this->widget . "'; // by default 'widget'";
+        }
+
+        if ($this->offset_x && $this->offset_y) {
+            $params[] = "_smartsupp.offsetX = " . (int)$this->offset_x . ";    // offset from left / right, default 10";
+            $params[] = "_smartsupp.offsetY = " . (int)$this->offset_y . ";    // offset from top, default 100";
+        }
 
         // set detailed visitor's info
         // basic info
