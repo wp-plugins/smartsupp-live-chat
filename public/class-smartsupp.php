@@ -4,7 +4,7 @@
  *
  * @package   Smartsupp
  * @author    Tom Wawrosz <tom@smartsupp.com>
- * Version:   0.2.0
+ * Version:   0.2.1
  * @copyright 2014 smartsupp.com
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
@@ -20,7 +20,7 @@ class Smartsupp
      * @since   0.1.0
      * @var     string
      */
-    const VERSION = '0.2.0';
+    const VERSION = '0.2.1';
 
     /**
      * Plugin slug
@@ -140,17 +140,17 @@ class Smartsupp
                     if ($value == '1') {
                         switch ($key) {
                             case 'username':
-                                $code->addUserExtraInformation('userName', __('Username'), $user->user_login);
+                                $code->setVariable('userName', __('Username'), $user->user_login);
                                 break;
                             case 'email':
-                                $code->addUserExtraInformation('email', __('Email'), $user->user_email);
+                                $code->setVariable('email', __('Email'), $user->user_email);
                                 $user_email = $user->user_email;
                                 break;
                             case 'role':
-                                $code->addUserExtraInformation('role', __('Role'), implode(' ,', $user->roles));
+                                $code->setVariable('role', __('Role'), implode(' ,', $user->roles));
                                 break;
                             case 'name':
-                                $code->addUserExtraInformation('name', __('Name'), $user->first_name  . ' ' . $user->last_name);
+                                $code->setVariable('name', __('Name'), $user->first_name  . ' ' . $user->last_name);
                                 break;
                             default:
                                 # code...
@@ -172,7 +172,7 @@ class Smartsupp
                                         $location = '-';
                                     }
 
-                                    $code->addUserExtraInformation('billingLocation', __('Billing Location'), $location);
+                                    $code->setVariable('billingLocation', __('Billing Location'), $location);
                                     break;
                                 case 'spent':
                                     if (!$spent = get_user_meta($user->ID, '_money_spent', true)) {
@@ -198,7 +198,7 @@ class Smartsupp
 
                                     $formatted_spent = sprintf(get_woocommerce_price_format(), get_woocommerce_currency_symbol(), $spent);
 
-                                    $code->addUserExtraInformation('spent', __('Spent'), $formatted_spent);
+                                    $code->setVariable('spent', __('Spent'), $formatted_spent);
                                     break;
                                 case 'orders':
                                     if (!$count = get_user_meta($user->ID, '_order_count', true)) {
@@ -218,7 +218,7 @@ class Smartsupp
 
                                     $count = absint($count);
 
-                                    $code->addUserExtraInformation('order', __('Order'), $count);
+                                    $code->setVariable('order', __('Order'), $count);
                                     break;
                                 default:
                                     # code...
@@ -230,8 +230,13 @@ class Smartsupp
             }
         }
 
-        $code->setUserBasicInformation($dashboard_name, $user_email);
+        $code->setName($dashboard_name);
+        $code->setEmail($user_email);
 
-        echo $code;
+        $code->render(true);
+
+        if(!empty($smartsupp['optional-code'])) {
+            echo "<script>{$smartsupp['optional-code']}</script>";
+        }
     }
 }
