@@ -64,7 +64,7 @@ https://www.smartsupp.com/help/wordpress
 
 == Changelog ==
 
-= 0.2.2 =
+= 0.2.3 =
 * Some default parameters are not set
 * Possibility to enter custom parameters for chat
 
