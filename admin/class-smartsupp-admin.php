@@ -82,7 +82,7 @@ class Smartsupp_Admin {
 		$smartsupp['active'] = true;
 		$smartsupp['chat-id'] = null;
 		$smartsupp['active-vars'] = true;
-		$smartsupp['optional-code'] = true;
+		$smartsupp['optional-code'] = null;
 		$smartsupp['wp-vars']['name'] = true;
 		$smartsupp['wp-vars']['username'] = true;
 		$smartsupp['wp-vars']['role'] = true;
@@ -264,7 +264,7 @@ class Smartsupp_Admin {
 	}
 
 	function general_setting_section_callback_function() {
-		echo __("Don't have a Smartsupp account? Sign up for free <a href=\"http://www.smartsupp.com\" target=\"_blank\">sign up for free</a>", $this->plugin_slug);
+		echo __("Don't have a Smartsupp account? <a href=\"http://www.smartsupp.com\" target=\"_blank\">Sign up for free</a>", $this->plugin_slug);
 	}
 
 	function variables_setting_section_callback_function() {
