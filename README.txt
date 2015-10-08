@@ -64,17 +64,17 @@ https://www.smartsupp.com/help/wordpress
 
 == Changelog ==
 
-= 0.2.3 =
+= 2.3 =
 * Some default parameters are not set
 * Possibility to enter custom parameters for chat
 
-= 0.2.2 =
+= 2.2 =
 * Some language changes
 
-= 0.2.1 =
+= 2.1 =
 * fixed error in rendering
 
-= 0.2 =
+= 2 =
 * Plugin is using now smartsupp/chat-code-generator (https://github.com/smartsupp/chat-code-generator)
 
 = 0.1 =
