@@ -41,7 +41,7 @@ More info at https://www.smartsupp.com.
 == Installation ==
 
 = Requires: =
-Wordpress 3.6.0 or higher
+Wordpress 3.0.1 or higher
 
 = Instalation steps =
 1. Install Smartsupp plugin in Wordpress and activate it
@@ -64,20 +64,20 @@ https://www.smartsupp.com/help/wordpress
 
 == Changelog ==
 
-= 0.2.4 =
+= 2.4 =
 * version fix
 
-= 0.2.3 =
+= 2.3 =
 * Some default parameters are not set
 * Possibility to enter custom parameters for chat
 
-= 0.2.2 =
+= 2.2 =
 * Some language changes
 
-= 0.2.1 =
+= 2.1 =
 * fixed error in rendering
 
-= 0.2 =
+= 2.0 =
 * Plugin is using now smartsupp/chat-code-generator (https://github.com/smartsupp/chat-code-generator)
 
 = 0.1 =
