@@ -50,7 +50,7 @@ Supported variables:
 
 == Changelog ==
 
-= 0.2 =
+= 2.0 =
 * Plugin is using now smartsupp/chat-code-generator (https://github.com/smartsupp/chat-code-generator)
 
 = 0.1 =
