@@ -2,9 +2,9 @@
 Contributors: tomwaw
 Donate link: 
 Tags: banckle, Casengo, chat, chat for web, chat online, chat software, click desk, clickdesk, freshdesk, free chat, free live chat, IM Chat, jivochat, jivosite, live chat, live chat inc, live support, live web chat, livechat, olark, online chat, online support, snapengage, wordpress chat, wordpress live chat, Zendesk, Zopim, Tawk.to, Happyfox chat, Smartsupp, Smartsup, Smartsapp, Boldchat, Live person, pure chat, chatra
-Requires at least: 3.6.0
-Tested up to: 4.2.4
-Stable tag: 0.1
+Requires at least: 3.0.1
+Tested up to: 4.3.1
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ More info at https://www.smartsupp.com.
 == Installation ==
 
 = Requires: =
-Wordpress 3.6.0 or higher
+Wordpress 3.0.1 or higher
 
 = Instalation steps =
 1. Install Smartsupp plugin in Wordpress and activate it
@@ -64,17 +64,23 @@ https://www.smartsupp.com/help/wordpress
 
 == Changelog ==
 
-= 0.2.3 =
+= 2.5 =
+* settings page changes
+
+= 2.4 =
+* version fix
+
+= 2.3 =
 * Some default parameters are not set
 * Possibility to enter custom parameters for chat
 
-= 0.2.2 =
+= 2.2 =
 * Some language changes
 
-= 0.2.1 =
+= 2.1 =
 * fixed error in rendering
 
-= 0.2 =
+= 2.0 =
 * Plugin is using now smartsupp/chat-code-generator (https://github.com/smartsupp/chat-code-generator)
 
 = 0.1 =
