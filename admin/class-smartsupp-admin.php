@@ -166,9 +166,6 @@ class Smartsupp_Admin {
 					'size' => 50
 				)
 			),
-		);
-
-		$fields['variables-settings'] = array(
 			'optional-code' => array(
 				'title' => __('Enter optional API code', $this->plugin_slug ),
 				'field_options' => array(
@@ -177,6 +174,9 @@ class Smartsupp_Admin {
 					'value' => $smartsupp['optional-code'],
 				)
 			),
+		);
+
+		$fields['variables-settings'] = array(
 			'active-vars' => array(
 				'title' => __( 'Visitor identification', $this->plugin_slug ),
 				'field_options' => array(
@@ -265,12 +265,18 @@ class Smartsupp_Admin {
 
 	function general_setting_section_callback_function() {
 		echo __("Don't have a Smartsupp account? <a href=\"http://www.smartsupp.com\" target=\"_blank\">Sign up for free</a>", $this->plugin_slug);
+		echo "<br /><br /><button onclick=\"window.open('https://dashboard.smartsupp.com','_blank');\" type=\"button\">" . __('Go to Smartsupp dashboard', $this->plugin_slug) . "</button> ";
 	}
 
 	function variables_setting_section_callback_function() {
 		echo "<script>
 		jQuery(document).ready(function() {
 			var code_tr = jQuery('textarea[name=\"smartsupp[optional-code]\"]').closest('tr');
+			var chat_id_tr = jQuery('input[name=\"smartsupp[chat-id]\"]').closest('tr');
+			var code_block = jQuery('#optional-code-block').html();
+
+			jQuery('#optional-code-block').remove();
+			chat_id_tr.parent().append('<tr><td colspan=\"2\">' + code_block + '</td></tr>');
 
 			if(!jQuery('textarea[name=\"smartsupp[optional-code]\"]').val()) {
 				code_tr.hide();
@@ -282,9 +288,8 @@ class Smartsupp_Admin {
 			});
 		});
 		</script>";
-		echo __("<a id=\"optional-code\">Optional API code</a> (API documentation at <a href=\"http://developers.smartsupp.com\" target=\"_blank\">developers.smartsupp.com</a>)", $this->plugin_slug);
-		echo "<br /><br /><button onclick=\"window.open('https://dashboard.smartsupp.com','_blank');\" type=\"button\">" . __('Go to Smartsupp dashboard', $this->plugin_slug) . "</button> ";
-		echo '<br /><br /><br /><img src="' . plugins_url( 'images/screen.png', dirname(__FILE__) ) . '" > ';
+		echo __("<div id=\"optional-code-block\"><a id=\"optional-code\">Optional API code</a> (API documentation at <a href=\"http://developers.smartsupp.com\" target=\"_blank\">developers.smartsupp.com</a>)</div>", $this->plugin_slug);
+		echo '<img src="' . plugins_url( 'images/screen.png', dirname(__FILE__) ) . '" > ';
 	}
 
 	/**
