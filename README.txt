@@ -64,6 +64,9 @@ https://www.smartsupp.com/help/wordpress
 
 == Changelog ==
 
+= 2.5 =
+* settings page changes
+
 = 2.4 =
 * version fix
 

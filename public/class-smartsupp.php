@@ -4,7 +4,7 @@
  *
  * @package   Smartsupp
  * @author    Tom Wawrosz <tom@smartsupp.com>
- * Version:   2.4
+ * Version:   2.5
  * @copyright 2014 smartsupp.com
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
