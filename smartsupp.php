@@ -2,7 +2,7 @@
 /**
  *
  * @package   Smartsupp
- * @author    Tom Wawrosz <tom@smartsupp.com>
+ * @author    Smartsupp <vladimir@smartsupp.com>
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
  * @copyright 2014 Smartsupp.com
@@ -11,7 +11,7 @@
  * Plugin URI:        http://www.smartsupp.com
  * Description:       Adds Smartsupp Live Chat code to your Wordpress.
  * Version:           2.5
- * Author:            Tom Wawrosz
+ * Author:            Smartsupp
  * Author URI:        http://www.smartsupp.com
  * Text Domain:       smartsupp
  * License:           GPL-2.0+
