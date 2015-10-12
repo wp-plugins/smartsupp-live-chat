@@ -2,7 +2,7 @@
 /**
  *
  * @package   Smartsupp
- * @author    Smartsupp <info@smartsupp.com>
+ * @author    Smartsupp <vladimir@smartsupp.com>
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
  * @copyright 2014 Smartsupp.com
