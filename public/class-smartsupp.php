@@ -159,7 +159,7 @@ class Smartsupp
                     }
                 }
 
-                if (Smartsupp::is_woocommerce_active()) {
+                if (Smartsupp::is_woocommerce_active() && !empty($smartsupp['woocommerce-vars'])) {
                     foreach ($smartsupp['woocommerce-vars'] as $key => $value) {
                         if ($value == '1') {
                             switch ($key) {
