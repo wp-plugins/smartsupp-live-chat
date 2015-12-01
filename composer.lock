@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "445d273f5262ae7cfa1cd3e026d0391d",
+    "hash": "2b26b9884252121ad5768e5ebf6f0ff4",
     "packages": [
         {
             "name": "smartsupp/chat-code-generator",
-            "version": "0.1.4",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smartsupp/chat-code-generator.git",
-                "reference": "d5272ddb3affa05af9966ead1e1df40f0d1171e8"
+                "reference": "1659eaa267318039dc65c63a8588944c69a5803c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smartsupp/chat-code-generator/zipball/d5272ddb3affa05af9966ead1e1df40f0d1171e8",
-                "reference": "d5272ddb3affa05af9966ead1e1df40f0d1171e8",
+                "url": "https://api.github.com/repos/smartsupp/chat-code-generator/zipball/1659eaa267318039dc65c63a8588944c69a5803c",
+                "reference": "1659eaa267318039dc65c63a8588944c69a5803c",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
             "keywords": [
                 "chat"
             ],
-            "time": "2015-12-01 13:19:02"
+            "time": "2015-12-01 14:49:12"
         }
     ],
     "packages-dev": [],
