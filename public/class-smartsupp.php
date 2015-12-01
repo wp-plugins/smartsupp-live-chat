@@ -4,7 +4,7 @@
  *
  * @package   Smartsupp
  * @author    Smartsupp <vladimir@smartsupp.com>
- * Version:   2.5
+ * Version:   2.7
  * @copyright 2014 smartsupp.com
  * @license   GPL-2.0+
  * @link      http://www.smartsupp.com
@@ -159,7 +159,7 @@ class Smartsupp
                     }
                 }
 
-                if (Smartsupp::is_woocommerce_active()) {
+                if (Smartsupp::is_woocommerce_active() && !empty($smartsupp['woocommerce-vars'])) {
                     foreach ($smartsupp['woocommerce-vars'] as $key => $value) {
                         if ($value == '1') {
                             switch ($key) {

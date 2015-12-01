@@ -78,6 +78,18 @@ class Smartsupp_Admin {
 
 	public static function install()
 	{
+		global $wp_version;
+		if (version_compare($wp_version, "3.1", "<")) {
+			deactivate_plugins(basename( __FILE__ ));
+			wp_die("Your Wordpress version is not compatible with Smartsupp plugin which requires at least version 3.1. Please update your Wordpress or insert Smartsupp chat code into your website manually (you will find the chat code in the email we have sent you upon registration");
+		}
+		if (version_compare(phpversion(), "5.3.0", "<")) {
+			deactivate_plugins(basename( __FILE__ ));
+			wp_die("This plugin requires at least PHP version 5.3.0, your version: " . PHP_VERSION . ". Please ask your hosting company to bring your PHP version up to date.");
+
+
+		}
+
 		$smartsupp = array();
 		$smartsupp['active'] = true;
 		$smartsupp['chat-id'] = null;
@@ -87,6 +99,12 @@ class Smartsupp_Admin {
 		$smartsupp['wp-vars']['username'] = true;
 		$smartsupp['wp-vars']['role'] = true;
 		$smartsupp['wp-vars']['email'] = true;
+
+		if(Smartsupp::is_woocommerce_active()) {
+			$smartsupp['woocommerce-vars']['spent'] = true;
+			$smartsupp['woocommerce-vars']['orders'] = true;
+			$smartsupp['woocommerce-vars']['location'] = true;
+		}
 
 		update_option('smartsupp', $smartsupp);
 	}
