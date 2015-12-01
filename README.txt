@@ -4,7 +4,7 @@ Donate link:
 Tags: banckle, Casengo, chat, chat for web, chat online, chat software, click desk, clickdesk, freshdesk, free chat, free live chat, IM Chat, jivochat, jivosite, live chat, live chat inc, live support, live web chat, livechat, olark, online chat, online support, snapengage, wordpress chat, wordpress live chat, Zendesk, Zopim, Tawk.to, Happyfox chat, Smartsupp, Smartsup, Smartsapp, Boldchat, Live person, pure chat, chatra
 Requires at least: 3.1
 Tested up to: 4.3.1
-Stable tag: 2.6
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,10 @@ https://www.smartsupp.com/help/wordpress
 3. Chat administration - visible to chat operators
 
 == Changelog ==
+
+= 2.7 =
+* Updated dependencies
+* Fixed problem with some non-ASCII letters used in strings
 
 = 2.6 =
 * PHP version check. At least PHP 5.3 is required during plugin activation.
